@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css" />
+</head>
+
+<body>
+    <section class="hero is-info">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Message Board!
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content" >
+                        <a class="button is-link is-info" href="/add">Report crime</a>
+                    </div>
+                </div>
+            </article>
+            {% for entry in entries %}
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong>{{ entry.date_posted }}</strong>
+                                <br> {{ entry.text }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+
+    </section>
+    <footer class="footer is-light">
+        <div class="content has-text-centered">
+            <p>
+              <strong>Notice Board</strong> by <a href="https://jgthms.com">Dalton Marhufu</a>. The source code is licensed
+              <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
+          </div>
+    </footer>
+
+</body>
+
+</html>
